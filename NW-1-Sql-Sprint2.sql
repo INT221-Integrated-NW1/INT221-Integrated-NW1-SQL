@@ -1,4 +1,3 @@
-
 SET time_zone = '+00:00';
 create database nw1;
 ALTER DATABASE nw1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -9,16 +8,14 @@ task_title varchar(100) NOT NULL,
 task_description varchar(500) DEFAULT NULL,
 task_assignees varchar(30) DEFAULT NULL,
 task_status enum('NO_STATUS','TO_DO','DOING','DONE') default'NO_STATUS' NOT NULL,
-created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+created_on datetime default CURRENT_TIMESTAMP NOT NULL,
+updated_on datetime default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
 PRIMARY KEY (task_id))ENGINE=INNODB DEFAULT CHARSET=UTF8MB4 COLLATE = UTF8MB4_0900_AI_CI;
 
 SELECT @@global.time_zone AS global_time_zone, @@session.time_zone AS session_time_zone;
 
 INSERT INTO tasks (task_id, task_title, task_description, task_assignees, task_status, created_on, updated_on)
-VALUES (1, 'TaskTitle1TaskTitle2TaskTitle3TaskTitle4TaskTitle5TaskTitle6TaskTitle7TaskTitle8TaskTitle9TaskTitle0', 
-'Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti1Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti2Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti3Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti4Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti5',
- 'Assignees1Assignees2Assignees3', 'No_Status', '2024-04-22 09:00:00', '2024-04-22 09:00:00');
+VALUES (1, 'TaskTitle1TaskTitle2TaskTitle3TaskTitle4TaskTitle5TaskTitle6TaskTitle7TaskTitle8TaskTitle9TaskTitle0', 'Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti1Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti2Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti3Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti4Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti5', 'Assignees1Assignees2Assignees3', 'No_Status', '2024-04-22 09:00:00', '2024-04-22 09:00:00');
 
 INSERT INTO tasks (task_id, task_title, task_description, task_assignees, task_status, created_on, updated_on)
 VALUES (2, 'Repository', '', '', 'To_Do', '2024-04-22 09:05:00', '2024-04-22 14:00:00');
