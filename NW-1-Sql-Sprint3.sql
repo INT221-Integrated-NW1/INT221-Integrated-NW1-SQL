@@ -1,3 +1,4 @@
+create database nw1;
 use nw1;
 CREATE TABLE status (
   status_id int NOT NULL AUTO_INCREMENT,
