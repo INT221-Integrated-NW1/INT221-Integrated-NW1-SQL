@@ -19,22 +19,34 @@ CREATE TABLE tasks (
 SET GLOBAL time_zone = '+00:00';
 SELECT @@global.time_zone AS global_time_zone, @@session.time_zone AS session_time_zone;
 INSERT INTO status (status_description, status_name) VALUES ('The Default Status', 'No Status');
-INSERT INTO status (status_description, status_name) VALUES ('', 'TO Do');
-INSERT INTO status (status_description, status_name) VALUES ('Being Worked on', 'Doing');
+INSERT INTO status (status_description, status_name) VALUES ('The task is included in the project', 'To Do');
+INSERT INTO status (status_description, status_name) VALUES ('The task is being worked on', 'In Progress');
+INSERT INTO status (status_description, status_name) VALUES ('The task is being reviewed', 'Reviewing');
+INSERT INTO status (status_description, status_name) VALUES ('The task is being tested', 'Testing');
+INSERT INTO status (status_description, status_name) VALUES ('The task is waiting for a resource', 'Waiting');
 INSERT INTO status (status_description, status_name) VALUES ('Finished', 'Done');
 
-INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
-VALUES (1, 'TaskTitle1TaskTitle2TaskTitle3TaskTitle4TaskTitle5TaskTitle6TaskTitle7TaskTitle8TaskTitle9TaskTitle0', 'Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti1Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti2Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti3Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti4Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti5', 'Assignees1Assignees2Assignees3', '2024-04-22 09:00:00', '2024-04-22 09:00:00'
-,1);
+-- INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
+-- VALUES (1, 'TaskTitle1TaskTitle2TaskTitle3TaskTitle4TaskTitle5TaskTitle6TaskTitle7TaskTitle8TaskTitle9TaskTitle0', 'Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti1Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti2Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti3Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti4Descripti1Descripti2Descripti3Descripti4Descripti5Descripti6Descripti7Descripti8Descripti9Descripti5', 'Assignees1Assignees2Assignees3', '2024-04-22 09:00:00', '2024-04-22 09:00:00'
+-- ,1);
 
-INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
-VALUES (2, 'Repository', '', '', '2024-04-22 09:05:00', '2024-04-22 14:00:00',2);
+-- INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
+-- VALUES (2, 'Repository', '', '', '2024-04-22 09:05:00', '2024-04-22 14:00:00',2);
 
-INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
-VALUES (3, 'ดาต้าเบส', 'ສ້າງຖານຂໍ້ມູນ', 'あなた、彼、彼女 (私ではありません)', '2024-04-22 09:10:00', '2024-04-25 00:00:00',3);
+-- INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
+-- VALUES (3, 'ดาต้าเบส', 'ສ້າງຖານຂໍ້ມູນ', 'あなた、彼、彼女 (私ではありません)', '2024-04-22 09:10:00', '2024-04-25 00:00:00',3);
 
-INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
-VALUES (4, '_Infrastructure_', '_Setup containers_', 'ไก่งวง กับ เพนกวิน', '2024-04-22 09:15:00', '2024-04-22 10:00:00',4);
+-- INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id)
+-- VALUES (4, '_Infrastructure_', '_Setup containers_', 'ไก่งวง กับ เพนกวิน', '2024-04-22 09:15:00', '2024-04-22 10:00:00',4);
+
+INSERT INTO tasks (task_id, task_title, task_description, task_assignees, created_on, updated_on, status_id) VALUES 
+(1, 'NS01', '', '', '2024-05-14 09:00:00', '2024-05-14 09:00:00', 1),
+(2, 'TD01', '', '', '2024-05-14 09:10:00', '2024-05-14 09:10:00', 2),
+(3, 'IP01', '', '', '2024-05-14 09:20:00', '2024-05-14 09:20:00', 3),
+(4, 'TD02', '', '', '2024-05-14 09:30:00', '2024-05-14 09:30:00', 2),
+(5, 'DO01', '', '', '2024-05-14 09:40:00', '2024-05-14 09:40:00', 7),
+(6, 'IP02', '', '', '2024-05-14 09:50:00', '2024-05-14 09:50:00', 3);
+
 
 DELIMITER //
 CREATE TRIGGER before_insert_and_update_tasks
